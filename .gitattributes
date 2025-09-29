@@ -1,0 +1,17 @@
+# Normalize text files and rely on Git for platform-specific EOL handling
+* text=auto
+
+# Force Markdown documentation to be treated as text (some CI tools mis-detect UTF-8 Turkish characters)
+*.md text diff=markdown
+
+# Treat common binary assets as binary to avoid line ending conversions
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+# SVG dosyaları metin tabanlı olduğu için diff'lerde gösterilebilmesi adına metin olarak işlenmeli
+*.svg text
+*.ico binary
+
+# Improve diffs for C# sources
+*.cs diff=csharp
